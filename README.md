@@ -6,6 +6,6 @@ This is a submission for the flutter clock challenge that allows you to see time
 
 <img src='digital_clock/screenshot.png' width='350'>
 
-<img src='digital_clock/screenshot2.png.png' width='350'>
+<img src='digital_clock/screenshot2.png' width='350'>
 
-<img src='digital_clock/screenshot3.png.png' width='350'>
+<img src='digital_clock/screenshot3.png' width='350'>
