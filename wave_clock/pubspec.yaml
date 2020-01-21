@@ -20,6 +20,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   fonts:
-    - family: Moon
+    - family: Mont
       fonts:
-        - asset: assets/Moon_get-Heavy.ttf
+        - asset: third_party/Mont-HeavyDEMO.otf

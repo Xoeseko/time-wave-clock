@@ -91,9 +91,11 @@ class _DigitalClockState extends State<DigitalClock> {
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
-    final _fontSize = MediaQuery.of(context).size.width / 4.4;
+    final _fontSize = MediaQuery.of(context).size.width / 3.5;
     final defaultStyle = TextStyle(
-        fontFamily: 'Moon', fontSize: _fontSize, letterSpacing: _fontSize / 30);
+        fontFamily: 'Mont', fontSize: _fontSize, 
+        // letterSpacing: _fontSize / 30
+        );
 
     return Container(
       color: colors[_Element.background],
@@ -113,14 +115,14 @@ class _DigitalClockState extends State<DigitalClock> {
                                 displayedTime: hour,
                                 timePassed: double.parse(minute), 
                                 maxTime: 60,
-                                initStrokeWidth: _fontSize / 18,
+                                initStrokeWidth: _fontSize / 40,
                                 height: _fontSize,)),
                           Expanded(
                               child: TimeWave(
                                 displayedTime: minute,
                                 height: _fontSize,  
                                 timePassed: decimalSeconds,
-                                initStrokeWidth: _fontSize / 18,
+                                initStrokeWidth: _fontSize / 40,
                                 maxTime: 60,
                               )
                           ),
