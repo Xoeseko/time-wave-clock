@@ -7,7 +7,7 @@ class CutoutPainter extends CustomPainter {
         text: text,
         style: style,
       ),
-      textDirection: TextDirection.ltr,  
+      textDirection: TextDirection.ltr,
     );
     _textPainter.layout();
   }
@@ -17,13 +17,14 @@ class CutoutPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final textOffset = size.center(Offset.zero) - _textPainter.size.center(Offset.zero);
+    final textOffset =
+        size.center(Offset.zero) - _textPainter.size.center(Offset.zero);
 
     // This does the trick for the rectangle to be the same size as the given canvas
     final boxRect = Rect.fromLTWH(0, 0, size.width, size.height);
     final boxPaint = Paint()
-    ..color = Colors.black
-    ..blendMode=BlendMode.srcOut;
+      ..color = Colors.black
+      ..blendMode = BlendMode.srcOut;
 
     canvas.saveLayer(boxRect, Paint());
 
@@ -33,7 +34,7 @@ class CutoutPainter extends CustomPainter {
     canvas.restore();
   }
 
-  @override 
+  @override
   bool shouldRepaint(CutoutPainter oldDelegate) {
     return text != oldDelegate.text;
   }

@@ -25,6 +25,7 @@ final _darkTheme = {
   _Element.text: Colors.white,
   _Element.shadow: Color(0xFF174EA6),
 };
+
 class DigitalClock extends StatefulWidget {
   const DigitalClock(this.model);
 
@@ -74,7 +75,7 @@ class _DigitalClockState extends State<DigitalClock> {
   void _updateTime() {
     setState(() {
       _dateTime = DateTime.now();
-      decimalSeconds = _dateTime.second + _dateTime.millisecond/1000;
+      decimalSeconds = _dateTime.second + _dateTime.millisecond / 1000;
       _timer = Timer(
         Duration(milliseconds: 15) -
             Duration(milliseconds: _dateTime.microsecond),
@@ -93,9 +94,9 @@ class _DigitalClockState extends State<DigitalClock> {
     final minute = DateFormat('mm').format(_dateTime);
     final _fontSize = MediaQuery.of(context).size.width / 3.5;
     final defaultStyle = TextStyle(
-        fontFamily: 'Mont', fontSize: _fontSize, 
-        // letterSpacing: _fontSize / 30
-        );
+      fontFamily: 'Mont',
+      fontSize: _fontSize,
+    );
 
     return Container(
       color: colors[_Element.background],
@@ -112,20 +113,20 @@ class _DigitalClockState extends State<DigitalClock> {
                         children: [
                           Expanded(
                               child: TimeWave(
-                                displayedTime: hour,
-                                timePassed: double.parse(minute), 
-                                maxTime: 60,
-                                initStrokeWidth: _fontSize / 40,
-                                height: _fontSize,)),
+                            displayedTime: hour,
+                            timePassed: double.parse(minute),
+                            maxTime: 60,
+                            initStrokeWidth: _fontSize / 40,
+                            height: _fontSize,
+                          )),
                           Expanded(
                               child: TimeWave(
-                                displayedTime: minute,
-                                height: _fontSize,  
-                                timePassed: decimalSeconds,
-                                initStrokeWidth: _fontSize / 40,
-                                maxTime: 60,
-                              )
-                          ),
+                            displayedTime: minute,
+                            height: _fontSize,
+                            timePassed: decimalSeconds,
+                            initStrokeWidth: _fontSize / 40,
+                            maxTime: 60,
+                          )),
                         ])),
               )
             ],
